@@ -1,15 +1,23 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
-      <ion-back-button icon="arrow-back" defaultHref="/"></ion-back-button>
-    </ion-buttons> 
-    <ion-title>Servicios</ion-title>
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>
+      QR Code
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
- 
+<ion-content [style.visibility]="content_visibility">
+
+  <ion-button 
+    expand="block" 
+    class="ion-margin" 
+    (click)="startScan()">
+    Scan QR Code
+  </ion-button>
+
+  <ion-item *ngIf="scannedResult">
+    <ion-label class="ion-text-wrap">Scanned Result: {{scannedResult}}</ion-label>
+  </ion-item>
 
 </ion-content>
 
